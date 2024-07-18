@@ -1,0 +1,16 @@
+[package]
+name = "prost-convert"
+version = "0.3.0"
+edition = "2021"
+description = "Generate more idiomatic rust code from GRPC proto files."
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+uuid = { version = "1.3.0" }
+prost-convert-derive = { path = "../prost-convert-derive", optional = true }
+anyhow = "1.0.69"
+thiserror = "1.0.38"
+
+[features]
+# Provide derive(ProstConvert) macro.
+derive = ["prost-convert-derive"]

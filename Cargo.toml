@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "prost-convert",
+    "prost-convert-derive",
+]
+resolver="2"
