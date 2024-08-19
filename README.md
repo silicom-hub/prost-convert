@@ -3,8 +3,8 @@
 Based on [Prost](https://github.com/tokio-rs/prost) crate, prost_convert aims at generating more idiomatic rust code from GRPC proto files.
 
 For more information:
-- [prost_convert README](./prost_convert/README.md)
-- [prost_convert_derive README](./prost_convert_derive/README.md)
+- [prost_convert README](./prost-convert/README.md)
+- [prost_convert_derive README](./prost-convert-derive/README.md)
 
 ## License
 
