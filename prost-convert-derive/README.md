@@ -1,6 +1,6 @@
 # Prost convert derive
 
-This crate provides a derive macro for `TryFromProto` and `TryFromProto` traits.
+This crate provides a derive macro for `TryFromProto` and `FromNative` traits.
 
 ## What is required to use it.
 

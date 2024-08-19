@@ -11,8 +11,6 @@ pub struct Container<'a> {
     pub attrs: Attributes,
     /// The contents of the struct or enum.
     pub data: Data<'a>,
-    /// Original input.
-    pub original: &'a syn::DeriveInput,
 }
 
 /// The fields of a struct or enum.
@@ -29,7 +27,6 @@ pub struct Variant<'a> {
     pub ident: syn::Ident,
     pub style: Style,
     pub fields: Vec<Field<'a>>,
-    pub original: &'a syn::Variant,
 }
 
 /// A field of a struct.
@@ -38,7 +35,6 @@ pub struct Field<'a> {
     // TODO: check if unammed fields does't break the macro.
     pub name: Option<syn::Ident>,
     pub ty: &'a syn::Type,
-    pub original: &'a syn::Field,
 }
 
 #[derive(Copy, Clone, Debug)]
@@ -70,7 +66,6 @@ impl<'a> Container<'a> {
             ident: ast.ident.clone(),
             attrs: Attributes::from_ast(ast)?,
             data,
-            original: ast,
         })
     }
 
@@ -117,7 +112,6 @@ fn enum_from_ast(variants: &Punctuated<syn::Variant, Token![,]>) -> Vec<Variant<
                 ident: variant.ident.clone(),
                 fields,
                 style,
-                original: variant,
             }
         })
         .collect()
@@ -129,7 +123,6 @@ fn fields_from_ast(fields: &Punctuated<syn::Field, Token![,]>) -> Vec<Field<'_>>
         .map(|field| Field {
             name: field.ident.clone(),
             ty: &field.ty,
-            original: field,
         })
         .collect()
 }

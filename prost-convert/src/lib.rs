@@ -394,6 +394,6 @@ impl TryFromProto<String> for uuid::Uuid {
 // be annoying for crates that provide handwritten impls. They
 // would need to disable default features and then explicitly re-enable std.
 
-#[cfg(feature = "prost_convert_derive")]
+#[cfg(feature = "prost-convert-derive")]
 #[doc(hidden)]
 pub use prost_convert_derive::ProstConvert;
