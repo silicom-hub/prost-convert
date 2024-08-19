@@ -11,7 +11,7 @@ repository = "https://github.com/silicom-hub/prost-convert"
 
 [dependencies]
 uuid = { version = "1.10" }
-prost-convert-derive = { path = "../prost-convert-derive", optional = true }
+prost-convert-derive = { path = "../prost-convert-derive", version = "0.3.0", optional = true }
 anyhow = "1.0"
 thiserror = "1.0"
 
